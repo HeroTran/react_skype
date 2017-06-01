@@ -1,5 +1,4 @@
 import React from 'react'
-import classnames from 'classnames'
 import ItemIcon from './ItemIcon'
 import IconSkype from './IconSkype'
 import CheckBox from './CheckBox'

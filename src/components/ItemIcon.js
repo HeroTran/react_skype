@@ -1,5 +1,4 @@
 import React from 'react'
-import classnames from 'classnames'
 
 export default class ItemIcon extends React.Component {
   
