@@ -13,11 +13,6 @@ import * as loopArray from '../util/function'
 
 export default class ListIcon extends React.Component {
 
-  constructor(props){
-    super(props);
-    
-   
-  }
   
  componentDidMount() {
    let self = this;
@@ -47,7 +42,7 @@ export default class ListIcon extends React.Component {
           <CheckBox 
               key={0}
               value={todos.x}
-              onCheckValueRadio = {this.checkValueRadio}
+              onCheckValueRadio={this.checkValueRadio}
               //onCheckValueRadio = {(event) => {actions.checkValueRadio(event)}}
            />
         </div>

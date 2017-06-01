@@ -2,10 +2,7 @@ import React from 'react'
 
 export default class ButtonShow extends React.Component {
   
-  constructor(props){
-    super(props);
-    
-  }
+ 
   
   
 

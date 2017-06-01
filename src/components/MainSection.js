@@ -2,11 +2,9 @@ import React from 'react'
 import ListIcon from './ListIcon'
 
 
-export default class MainSection extends Component {
+export default class MainSection extends React.Component {
   
-  constructor(props){
-    super(props);
-  }
+  
 
   render() {
    

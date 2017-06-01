@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React  from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import MainSection from '../components/MainSection'
@@ -10,10 +10,7 @@ const App = ({todos, actions}) => (
   </div>
 )
 
-App.propTypes = {
-  todos: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired
-}
+
 
 const mapStateToProps = state => ({
   todos: state.todos

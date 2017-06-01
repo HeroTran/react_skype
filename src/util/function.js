@@ -1,9 +1,7 @@
-'use strict';
-
 export function loopArray(listIcon) {
   var arryList = [];
   for(let i = 0;i<listIcon.length;i++){
-    if(listIcon[i].image != undefined){
+    if(listIcon[i].image !== undefined){
       listIcon[i].code = splitString(listIcon[i].code);
       arryList.push(listIcon[i]);
     }

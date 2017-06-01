@@ -17,8 +17,7 @@ const initialState = {
 export default function todos(state = initialState, action) {
   switch (action.type) {
     case SHOW_ALL_ICON:
-      var newlistConverSkype = [state.x];
-      newlistConverSkype = putValueToArr(state.image_current,state.code_current , state.x,state.y);
+      var newlistConverSkype = putValueToArr(state.image_current,state.code_current , state.x,state.y);
       //set localStorage for radio button
       localStorage.setItem("localIcon15",JSON.stringify({
         arr:newlistConverSkype
@@ -44,22 +43,17 @@ export default function todos(state = initialState, action) {
     case CHECK_ICON_UP:
         console.log("CHECK_ICON_UP");
         if(state.check){
-          var image_current = state.image_current;
-          var code_current = state.code_current;
-          var parent_id = action.parent_id;
-          var id = action.idx;
-          
           const listConverSkype = state.listConverSkype.map((child, parentIdx) => {
-          if(parentIdx !== parent_id) return child;
+          if(parentIdx !== action.parent_id) return child;
             return child.map((c, childId) => {
-              if(childId !== id) return c;
+              if(childId !== action.idx) return c;
               return {
-                code: code_current,
-                image: image_current
+                code: state.code_current,
+                image: state.image_current
               };
             })
           });
-          if(state.x == 15){
+          if(state.x === 15){
             localStorage.setItem("localIcon15",JSON.stringify({
               arr:listConverSkype
               })
@@ -83,22 +77,19 @@ export default function todos(state = initialState, action) {
       console.log("CHECK_ICON_OVER");
       
       if(state.check){
-        var image_current = state.image_current;
-        var code_current = state.code_current;
-        var parent_id = action.parent_id;
-        var id = action.idx;
+        
         
         const listConverSkype = state.listConverSkype.map((child, parentIdx) => {
-        if(parentIdx !== parent_id) return child;
+        if(parentIdx !== action.parent_id) return child;
           return child.map((c, childId) => {
-            if(childId !== id) return c;
+            if(childId !== action.idx) return c;
             return {
-              code: code_current,
-              image: image_current
+              code: state.code_current,
+              image: state.image_current
             };
           })
         });
-        if(state.x == 15){
+        if(state.x === 15){
             localStorage.setItem("localIcon15",JSON.stringify({
               arr:listConverSkype
               })
@@ -129,8 +120,7 @@ export default function todos(state = initialState, action) {
           state.y = 20;
           localIcon = JSON.parse( localStorage.getItem("localIcon20"))
         }
-        var newlistConverSkype = localIcon.arr;
-      return {...state, listConverSkype:newlistConverSkype,check:false};
+      return {...state, listConverSkype:localIcon.arr,check:false};
     case SHOW_CODE:
       let valueCode = getStringCodeFromList(state.listConverSkype);
       let check = valueCode === "" ? true : false;

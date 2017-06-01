@@ -13,7 +13,7 @@ onClickCheckIcon = e => {
     const {icon, idIcon ,onClickCheckIcon} = this.props
     return (
       <li key={idIcon} onClick={onClickCheckIcon}>
-        <img src={this.props.icon.image} data-code={this.props.icon.code} title={this.props.icon.code} />
+        <img src={icon.image} data-code={icon.code} title={icon.code} alt={"skype icon"} />
       </li>
     );
   }
