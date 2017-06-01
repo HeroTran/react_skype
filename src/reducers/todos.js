@@ -191,6 +191,7 @@ function getStringCodeFromList(listConverSkype){
       for(let j = 0 ;j<listConverSkype[i].length;j++){
           str += listConverSkype[i][j].code;
       }
+      str += "\n";
   }
   return str;
 }
