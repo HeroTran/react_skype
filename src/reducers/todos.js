@@ -1,4 +1,5 @@
-import {SHOW_ALL_ICON,SELECTED_ICON,CHECK_ICON_DOWN,CHECK_ICON_UP,CHECK_ICON_OVER,CHECK_BOX,SHOW_CODE} from '../constants/ActionTypes'
+import {SHOW_ALL_ICON,SELECTED_ICON,CHECK_ICON_DOWN,CHECK_ICON_UP,CHECK_ICON_MOVE,CHECK_ICON_OUT,
+CHECK_ICON_OVER,CHECK_BOX,SHOW_CODE} from '../constants/ActionTypes'
 
 
 const initialState = {
@@ -37,9 +38,12 @@ export default function todos(state = initialState, action) {
     case CHECK_ICON_DOWN:
       console.log("CHECK_ICON_DOWN");
       
+        return {
+          ...state,
+          check:true
+
+        };
       
-      
-      return {...state,check:true};
     case CHECK_ICON_UP:
         console.log("CHECK_ICON_UP");
         if(state.check){
@@ -74,11 +78,7 @@ export default function todos(state = initialState, action) {
       
       return {...state,check:true};
     case CHECK_ICON_OVER:
-      console.log("CHECK_ICON_OVER");
-      
       if(state.check){
-        
-        
         const listConverSkype = state.listConverSkype.map((child, parentIdx) => {
         if(parentIdx !== action.parent_id) return child;
           return child.map((c, childId) => {
@@ -103,10 +103,20 @@ export default function todos(state = initialState, action) {
         return {
           ...state,
           listConverSkype:listConverSkype
+
         };
       }
+      return {
+          ...state,
+          check:false
+
+        };
+    case CHECK_ICON_MOVE:
+      console.log("CHECK_ICON_MOVE");
       
       
+      
+    case CHECK_ICON_OUT:
       return {...state,check:false};
     case CHECK_BOX:
         var localIcon ;
