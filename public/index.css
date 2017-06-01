@@ -1,0 +1,59 @@
+body{
+  min-width: 80% !important;
+}
+.new-todo{
+  background: red!important;
+}
+.main ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 15px;
+    display: block;
+    overflow: hidden;
+    border: 1px solid red;
+}
+.main ul li{
+  display: inline-block;
+  max-width: 40px;
+  max-height: 40px;
+  margin: 5px 5px;
+}
+
+.active{
+  border: 2px dotted red;
+  padding: 5px;
+}
+.main ul li img{
+  max-width: 100%;
+  height: auto;
+}
+.main ul.list-icon{
+  margin-top: 100px;
+  width: 100%;
+  padding: 20px 0px;
+}
+.main ul.list-icon li {
+  max-width: 25px;
+  max-height: 25px;
+  margin: 0px;
+}
+.box-ul{
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+.section-button{
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+}
+.section-button input{
+  margin: 20px 0px;
+}
+.section-button textarea{
+  width: 50%;
+  min-height: 200px;
+  margin-bottom: 20px;
+}
+.section-button textarea:disabled{background-color: #ccc;}
