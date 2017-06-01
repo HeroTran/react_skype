@@ -57,3 +57,4 @@ body{
   margin-bottom: 20px;
 }
 .section-button textarea:disabled{background-color: #ccc;}
+h2{text-align: center;}

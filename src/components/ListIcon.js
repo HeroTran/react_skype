@@ -46,6 +46,7 @@ export default class ListIcon extends React.Component {
               //onCheckValueRadio = {(event) => {actions.checkValueRadio(event)}}
            />
         </div>
+        <h2>You can choose icon you want to draw</h2>
         <ul className="Grid" key={0}>
            {
              
@@ -64,6 +65,7 @@ export default class ListIcon extends React.Component {
 
           }
         </ul>
+        <h2>You can draw</h2>
         <div className="box-ul">
           <ul className="list-icon" key={1}>
             {
