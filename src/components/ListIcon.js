@@ -33,7 +33,8 @@ export default class ListIcon extends React.Component {
     console.log(idx);
   }
   checkValueRadio = (event) => {
-    this.props.actions.checkValueRadio(event);
+    let id = event.target.value;
+    this.props.actions.checkValueRadio(id);
   }
   showCode = () => {
     this.props.actions.showCode();
@@ -48,6 +49,10 @@ export default class ListIcon extends React.Component {
   clickOk = () =>{
     this.setState({ showModal: false });
     this.props.actions.onClickOk();
+  }
+
+  clickCopyCode = () =>{
+    handlingArray.copyfieldvalue("text-code");
   }
 
   render() {
@@ -130,6 +135,10 @@ export default class ListIcon extends React.Component {
               checkCode={todos.checkCode}
               onClickButtonShow={this.showCode}
             />
+
+            {todos.valueCode.length > 0  &&
+                 <input className="btn btn-default btn-copy" type="button" onClick={this.clickCopyCode} value="Copy Code"/>
+            }
            
             <Modal show={this.state.showModal} onHide={this.close}>
               <Modal.Header closeButton>

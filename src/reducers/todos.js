@@ -10,7 +10,7 @@ const initialState = {
   check:false,
   image_current:"https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/kiss_80_anim_gif.gif?width=40&height=40",
   code_current:":-*",
-  idx: " ",
+  idx: "",
   listConverSkype:[],
   valueCode:"",
   checkCode:true,
@@ -40,20 +40,18 @@ export default function todos(state = initialState, action) {
       return {...state, idx: action.payload,image_current:img,code_current:code,check:false};
     case CHECK_ICON_DOWN:
       console.log("CHECK_ICON_DOWN");
-      
         return {
           ...state,
           check:true
-
         };
       
     case CHECK_ICON_UP:
         console.log("CHECK_ICON_UP");
         if(state.check){
           const listConverSkype = state.listConverSkype.map((child, parentIdx) => {
-          if(parentIdx !== action.parent_id) return child;
+          if(parentIdx !== action.payload.parent_id) return child;
             return child.map((c, childId) => {
-              if(childId !== action.idx) return c;
+              if(childId !== action.payload.idx) return c;
               return {
                 code: state.code_current,
                 image: state.image_current
@@ -83,9 +81,9 @@ export default function todos(state = initialState, action) {
     case CHECK_ICON_OVER:
       if(state.check){
         const listConverSkype = state.listConverSkype.map((child, parentIdx) => {
-        if(parentIdx !== action.parent_id) return child;
+        if(parentIdx !== action.payload.parent_id) return child;
           return child.map((c, childId) => {
-            if(childId !== action.idx) return c;
+            if(childId !== action.payload.idx) return c;
             return {
               code: state.code_current,
               image: state.image_current
@@ -116,7 +114,7 @@ export default function todos(state = initialState, action) {
         };
     case CHECK_BOX:
         var localIcon ;
-        if(action.payload.target.value === "15" ){
+        if(action.payload === "15" ){
           state.x = 15;
           state.y = 15;
           localIcon = JSON.parse( localStorage.getItem("localIcon15") );
