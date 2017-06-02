@@ -7,4 +7,5 @@ export const CHECK_ICON_MOVE = 'CHECK_ICON_MOVE'
 export const CHECK_ICON_OUT = 'CHECK_ICON_OUT'
 export const CHECK_ICON_OVER = 'CHECK_ICON_OVER'
 export const CHECK_BOX = 'CHECK_BOX'
-export const SHOW_CODE = 'SHOW_CODE';
+export const SHOW_CODE = 'SHOW_CODE'
+export const CHECK_OK = 'CHECK_OK'

@@ -10,3 +10,4 @@ export const onmouseout = (parent_id,idx)=>({type:types.CHECK_ICON_OUT,parent_id
 export const onmouseover = (parent_id,idx)=>({type:types.CHECK_ICON_OVER,parent_id,idx})
 export const checkValueRadio = (event)=>({type:types.CHECK_BOX,payload:event})
 export const showCode = ()=>({type:types.SHOW_CODE})
+export const onClickOk = () => ({type:types.CHECK_OK})

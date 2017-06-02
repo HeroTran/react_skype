@@ -1,18 +1,21 @@
 import React  from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import MainSection from '../components/MainSection'
+import MainIcon from '../components/MainIcon'
 import * as TodoActions from '../actions'
 
 const App = ({todos, actions}) => (
   <div>
-    <MainSection todos={todos} actions={actions} />
+    <MainIcon todos={todos} actions={actions} />
   </div>
 )
 
 
 
-const mapStateToProps = state => ({
+const mapStateToProps = state => (
+    
+{
+  
   todos: state.todos
 })
 
