@@ -40,14 +40,6 @@ export default function todos(state = initialState, action) {
       return {...state, idx: action.payload,image_current:img,code_current:code,check:false};
     case CHECK_ICON_DOWN:
       console.log("CHECK_ICON_DOWN");
-        return {
-          ...state,
-          check:true
-        };
-      
-    case CHECK_ICON_UP:
-        console.log("CHECK_ICON_UP");
-        if(state.check){
           const listConverSkype = state.listConverSkype.map((child, parentIdx) => {
           if(parentIdx !== action.payload.parent_id) return child;
             return child.map((c, childId) => {
@@ -72,12 +64,14 @@ export default function todos(state = initialState, action) {
           return {
             ...state,
             listConverSkype:listConverSkype,
-            check:false
+            check:true
           };
-      }
       
       
-      return {...state,check:true};
+      
+    case CHECK_ICON_UP:
+        
+      return {...state,check:false};
     case CHECK_ICON_OVER:
       if(state.check){
         const listConverSkype = state.listConverSkype.map((child, parentIdx) => {
