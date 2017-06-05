@@ -29,6 +29,22 @@ export default class ListIcon extends React.Component {
 
       });
   }
+  shouldComponentUpdate = (nextProps, nextState) =>{
+    console.log("shouldComponentUpdate");
+    console.log(nextProps);
+    console.log(nextState);
+    return true;
+  }
+  componentWillReceiveProps = (nextProps) =>{
+    console.log("componentWillReceiveProps");
+  }
+  componentWillReceiveProps = (nextProps) =>{
+    console.log("componentWillReceiveProps");
+  }
+ 
+  componentDidUpdate = (prevProps, prevState) =>{
+    console.log("componentDidUpdate");
+  }
   onClickCheckIcon = (idx) => {
     console.log(idx);
   }
